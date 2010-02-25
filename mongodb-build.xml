@@ -1,0 +1,11 @@
+<?xml version="1.0"  encoding="UTF-8" ?>
+<project name="recordshelf" basedir="." default="export-backstock">
+    <taskdef name="mongoexport" 
+             classname="phing.tasks.my.mongodb.MongoDbExportTask" />
+    <target name="export-backstock">
+      <mongoexport collection="backstock" 
+                   db="recordshelf" 
+                   type="json"
+                   outputfile="./mongodb-exports/recordshelf-backstock.json"/>
+    </target>
+</project>
